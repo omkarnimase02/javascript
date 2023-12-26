@@ -1,4 +1,9 @@
-console.log("Omkar Nimase");
+ 
+  // cONVERSION &&  OPERATION
+
+  /////  **** Conversion *****///
+
+/*console.log("Omkar Nimase");
 
 let score = 33;  //-> number
 let mark = "95.45" // -> string
@@ -81,3 +86,47 @@ console.log(boolisLog);
  console.log(typeof stringNum);
 
 console.log(stringNum);
+*/
+
+/////  **** Operation *****///
+let val = 3;
+let negval = - val;
+
+// console.log(negval);
+
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+
+// console.log(2**3);
+// console.log(2/3);
+// console.log(2%3);
+// console.log(2+2);
+
+let str1 ="Hello"
+let str2 = "Omkar"
+let str3 = str1+str2
+console.log(str3);
+
+// console.log("1" +2);
+// console.log(1+"2");
+
+// console.log("1"+"2");
+
+// console.log("1"+2+"3");
+// console.log(1+2+"9");
+// console.log(1+"2"+"4");
+// console.log("2"+"4"+3);
+// console.log("1"+"2"+"3");
+
+
+/// ** tricky Conversion **//
+let num1,num2,num3
+num1 = num2= num3 = 2+2
+console.log(num3);
+console.log(num1);
+
+
+let gameCounter =100
+gameCounter++;
+console.log(gameCounter);
