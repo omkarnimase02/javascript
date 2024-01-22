@@ -75,7 +75,7 @@ const obj3 ={...obj1, ...obj2};
 const course={
     name :"Chay our Code",
     price:"999",
-    courseInstructor :" Omkar"
+    courseInstructor :" Omkar"   
 }
 
 // suppose print name 3 times then to write the log statement
@@ -111,5 +111,5 @@ console.log(instructor);  /// call its using the its name
 
 //     {}
 //     {}
-//     {}
+//     {} 
 // ]
