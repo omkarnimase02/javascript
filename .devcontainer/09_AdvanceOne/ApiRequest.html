@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api request </title>
+</head>
+
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+
+
+<script>
+    // store the api url
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    
+    // pass the XML request
+    const xhr = new XMLHttpRequest();
+
+    // perform the open operation
+    xhr.open('GET',requestUrl);
+
+    // perform onreadystatechange function to defing the changing state
+
+    xhr.onreadystatechange= function(){
+        console.log(xhr.readyState);
+
+        // if state is 4 -> complete
+
+        if(xhr.readyState === 4){
+            // convert string to object
+            const data = JSON.parse(this.responseText);
+
+            console.log(typeof data);
+            // definr the followers
+
+            console.log(data.followers);
+        }
+    }
+    //open call
+    xhr.send();
+</script>
+</html>
