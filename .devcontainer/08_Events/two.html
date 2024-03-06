@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:azure; color: brown;">
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+
+    // change the h1
+    // document.querySelector('h1').innerHTML= "Omkar Love Girl"
+    // affect in after 3 sec
+    const love = function(){
+        document.querySelector('h1').innerHTML= "Omkar Nimase"
+    }
+    const stopMe = setTimeout(love,3000);
+    // setTimeout() -> how much time to make o/p run
+    // parameter -> handler - function without name
+    // timeout in sec
+
+    setTimeout(function(){
+        console.log("Omkar");
+        // console.log("Nimase");
+    }, 2000)  
+ 
+    //2 ->  also in pass by reference
+    const name = function(){
+        console.log("Pravin");
+    }
+    setTimeout(name,2000);
+
+    // tostop the setTimeout()  -> using the clearTimeout()
+    // pass the reference to which one setTime function is stop
+    
+
+    // apply on the event
+    document.querySelector('#stop').
+    addEventListener('click',function(){
+        clearTimeout(stopMe)
+        console.log("STOPPED");     
+    },false)
+
+
+</script>
+</html>

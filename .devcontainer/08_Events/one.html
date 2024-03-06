@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events </title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <!-- 1 -> onclick direct use -->
+            <!-- <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('this is')"></li> -->
+
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+
+// 2  -->> onclick use direct function
+/*
+    const jap = document.querySelector('#japan')
+    jap.onclick= function(){
+        alert('This picture is in Japan')
+    }
+    // click on owl 
+    const owl = document.getElementById('owl')
+    owl.onclick = function(){
+        alert('This is OWl');
+    }
+
+    */
+
+    // addEventListener(1- event, 2-> function(){},3-false)  -> false by default it is false but
+    // some project it require to written
+
+                                            
+
+    // // 3 -> using the eventListner
+    // const owl = document.getElementById('owl');   
+
+    // owl.addEventListener('click',function(e){  // e is the object
+    //     //alert("Owl click Again ")
+    //     console.log(e);
+    // })
+
+    //Event Propagation  -> event Bubling(default false)  Event Capturing
+    // 1-> Event bubling -> default false
+    // -> run inside to the outside
+
+    // document.getElementById('images').addEventListener('click',function(e){  // e is the object
+    //     console.log("Click inside ul");
+    // },false)
+
+    // document.getElementById('owl').addEventListener('click',function(e){  // e is the object
+    //     console.log("Owl clicked");
+    //      // to stop the bubling use the e.stopPropagation()
+    //     e.stopPropagation()
+    // },false)
+
+    // 2-> Event Capturing -> default true
+    // run -> top to bottom -> ouside to inside
+
+    // document.getElementById('images').addEventListener('click',function(e){  // e is the object
+    //     console.log("Click inside ul");
+    // },true)
+
+    // document.getElementById('river').addEventListener('click',function(e){  // e is the object
+    //     console.log("river clicked");
+        
+    // },true)
+
+    // preventDefault() -> to stop the link next page
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault(); // -> stop the execution
+    //     e.stopPropagation(); // -> stop bubling
+    //     console.log('Google Clicked');
+    // },false)
+
+    // Project -> Click then remove the images
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+
+        // 1 -> find parent & direct remove
+    //    let removeIt = e.target.parentNode;
+    //     removeIt.remove();  
+  // if this click on li then all remove thats why apply condition if click on img then only remove the img
+       
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+         removeIt.remove();
+        }
+ 
+        // 2-> removeit -> parent & removeChild(removeit)
+        // let removeIt = e.target.parentNode;
+        // removeIt.parentNode.removeChild(removeIt)
+    },false)
+
+    
+
+
+</script>
+
+</html>

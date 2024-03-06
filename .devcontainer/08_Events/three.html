@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:azure; color: brown;">
+    <h1>chai our Biscuit</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+
+    // setInterval() => run infinite time after the set time
+
+    setInterval(function(){
+       // console.log("Omkar",Date.now());
+    },2000)
+
+    // by reference  and pass argument also
+    const todayD = function(str){
+          console.log(str,Date.now());
+    }
+    const id =setInterval(todayD,2000,"Nimase")
+
+    // to stop the this interval
+    // clearInterval() -> pass the  reference which one is stop
+
+    clearInterval(id);
+
+    // by using the start & stop button in ui 
+    // start -> start printing
+    // stop -> stop printing
+
+    
+    // Start Button
+     let stopp = 0;
+    document.querySelector('#start').
+    addEventListener('click',function(){
+        stopp =setInterval(function(){
+        console.log("Omkar",Date.now());
+    },2000)
+    })
+
+    // Stop button 
+    document.querySelector('#stop').
+    addEventListener('click',function(){
+        clearInterval(stopp)
+    })
+
+  
+</script>
+</html>
