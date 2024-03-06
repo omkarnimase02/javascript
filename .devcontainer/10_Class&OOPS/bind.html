@@ -1,0 +1,40 @@
+<!--  bind -> to store the reference -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body> 
+
+    <button>Button Clicked </button>
+    <!--  after click show messege -> button is clicked -->
+    <!--  access the property, refersence in the class also -->
+</body>
+
+<script>
+    class react{
+        constructor(){
+            this.library = "React";
+            this.server ="https://localhost 300p"
+
+            // requirment
+            document.querySelector('button')
+                    .addEventListener('click',this.handleClick.bind(this))
+                    
+        }
+
+        // method
+        handleClick(){
+            console.log("Button id clicked");
+            console.log(this);
+            console.log(this.library);
+            console.log(this.server);
+        }
+    }
+    // create the obj of class
+    const app = new react();
+</script>
+</html>
