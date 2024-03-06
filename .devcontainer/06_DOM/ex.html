@@ -1,0 +1,40 @@
+<!-- create the function & pass the message to print in the body -->
+ 
+<!DOCTYPE html>
+<html lang="en">   
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM || Chai aur code</title>
+</head>
+<body style="background-color: aquamarine; border-radius: 20px; padding: 20px;color: red; ">
+
+<!-- Direct add the script -->
+<script>
+    function showMessage(message,bgcolor){
+
+        const div = document.createElement('div')
+
+        div.class="main"
+        div.id = Math.round(Math.random()*10+1)
+
+        // costom id set
+        div.setAttribute("title","set title")
+
+        div.style.backgroundColor=bgcolor
+        div.style.padding="10px"
+
+        const addText = document.createTextNode(message)
+        div.appendChild(addText)
+        document.body.appendChild(div)
+
+    }
+   
+
+    // Call the function with different messages and background colors
+    showMessage("Hello,Omkar Nimase", "yellow");
+    showMessage("Good Afternoon", "black");
+    showMessage("Yes minute", "orange");
+</script>
+</body>
+</html>
