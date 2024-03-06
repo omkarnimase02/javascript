@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>   
+<body style="background-color: #313131;">
+    <button id ="orange">Orange</button>
+    <button id ="yellow">Yellow</button>
+</body>
+
+<script>
+    // lexical scope -> inner function access the prop of the outer function
+
+    // function outer(){
+    //     let name = "omkar";
+
+    //     function inner(){
+           
+    //         console.log("To Inner",name);
+    //     }
+    //     function innerTwo(){
+    //         let no="7276"
+    //         console.log("innerTwo",name);
+
+    //         function innerThree(){
+    //             console.log("innerThree",name);
+    //             console.log("innertherr",no);
+    //         }
+
+    //         innerThree();
+    //     }
+    //     inner(); 
+    //     innerTwo();
+    // }
+    // outer()
+</script>
+
+<script>
+// change the bgcolor afetr click on the button
+// document.getElementById("orange").onclick= function(){
+//     document.body.style.backgroundColor ='orange'
+// }
+// document.getElementById("yellow").onclick= function(){
+//     document.body.style.backgroundColor ='yellow'
+// }
+
+// create the function of change color
+ function clickHandler(color){
+    // document.body.style.backgroundColor = `${this.color}`
+
+    return function(){
+        document.body.style.backgroundColor = `${color}`
+    }
+}
+document.getElementById("orange").onclick = clickHandler('orange')
+document.getElementById("yellow").onclick = clickHandler('yellow')
+</script>
+</html>
