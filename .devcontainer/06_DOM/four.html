@@ -1,0 +1,106 @@
+<!--  edit & remove element in DOM -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: aquamarine; color: red;">
+    <ul class="lang">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+
+    // 1-> using the direct innnerHtml / textContent method
+    function addLang(langName,bgcolor){
+
+        // create the element
+        const name = document.createElement('li')
+        name.style.backgroundColor = bgcolor
+ 
+ 
+
+
+    //  -> direct using the innerHTML
+
+        // create the text to add in the list
+        name.textContent = langName;  // using innerhtml
+         
+
+       // attach to the document  
+        document.querySelector('.lang').appendChild(name)
+ 
+        // const text = document.querySelector('.lang');
+        // text.appendChild(name);
+    }
+
+    // 2 -> optimise way to add element
+
+    function addOtimalLang(langName,bgcolor){
+
+        // create the element
+        const name = document.createElement('li')
+        name.style.backgroundColor = bgcolor
+
+         // create the textNode
+        // const addtext = document.createTextNode(langName)
+        // name.appendChild(addtext)
+
+        name.appendChild(document.createTextNode(langName))
+
+        // Attach to the document
+        // const cl = document.querySelector('.lang')
+        // cl.appendChild(name)
+
+        document.querySelector('.lang').appendChild(name)
+    }
+
+    addOtimalLang("Java","white")
+    addLang("C++","yellow");
+    addLang("Python","orange")
+    addLang("SQL","pink")
+
+    // Edit -> change the values is in element
+
+    // 1 -> select the query  using the querySelecctor
+    const secLang = document.querySelector("li:nth-child(2)")
+
+    // 2 -> diredct change using the innerHTML
+    // secLang.innerHTML="Django"
+
+    // create the new element
+    const newli = document.createElement('li')
+
+    // add the text content in the newli
+    newli.textContent="CSS"
+    
+    // using the replaceWith() method
+    secLang.replaceWith(newli)
+
+    // edit using the outerHTML 
+
+    const firstlang = document.querySelector("li:first-child")
+    firstlang.outerHTML="<li>TypeScript</li>"
+
+    // remove the last lang
+
+    // remove the 2nd lang
+
+    const thirdlang =document.querySelector("li:nth-child(3)")
+    console.log((thirdlang));
+    thirdlang.remove()
+
+// 1 select the last lang
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()  // remove using .remove()
+    
+
+</script>
+
+</html>
+
+

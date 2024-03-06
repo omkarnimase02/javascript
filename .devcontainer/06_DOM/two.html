@@ -1,0 +1,71 @@
+
+<!-- parent child relation  -->
+<!--  sibling , childNodes -->
+
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | chai our Code</title>
+</head>
+<body style="background-color: aquamarine; border-radius: 20px; padding: 20px;color: red; ">
+    <!--  parent class -->
+    <div class="parent">
+        <!--  child class  -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    
+</body>
+<!--  add the scripintg tag -->
+<script>
+    //  select the parent class & find out the values in it
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[2]);
+    //console.log(parent.children[2].innerHTML);    // Wednesday
+
+    //  using the for loop accesss the arr
+    // print the text in hte child classes
+    for(let i=0;i<parent.children.length;i++){
+       // console.log(parent.children[i].innerHTML);
+    }
+
+    // convert HTML collection into the arr & print the text in it
+    const arr = Array.from(parent.children)
+    arr.forEach(function(i){
+        // console.log(i.innerHTML);
+    })
+    // add style respective child
+
+    // parent.children[0].style.color="orange"
+    // parent.children[2].style.color ="black"
+
+    // find out the first ele in child
+    // console.log(parent.firstElementChild);  //<div class="day">Monday</div>
+
+    // find out the last ele in child
+   // console.log(parent.lastElementChild);  // <div class="day">Thursday</div>
+
+   // find out the first child using the querySelector
+   const dayOne = document.querySelector('.day') 
+   //console.log(dayOne);  //<div class="day">Monday</div>
+
+   /// find out the parent of child
+  // console.log(dayOne.parentElement);
+
+  /// find out the next sibling of child
+//   console.log(dayOne.nextElementSibling);  //<div class="day">tuesday</div>
+  console.log(dayOne.previousElementSibling);  //<div class="day">tuesday</div>
+
+
+  // find out the total nodes in parent // comment /text ,line brreak
+  console.log("Nodes", parent.childNodes);
+
+
+</script>
+</html>
